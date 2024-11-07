@@ -19,4 +19,10 @@ html {
 
 body {
   margin-bottom: 60px;
+  background-color: mintcream;
+  font-family:'Times New Roman', Times, serif
+}
+
+header {
+    color: lightseagreen;
 }
