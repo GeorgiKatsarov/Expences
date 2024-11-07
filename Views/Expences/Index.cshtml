@@ -3,12 +3,16 @@
 @{
     ViewData["Title"] = "All expences";
 }
+@{
+    decimal sum = 0;
+}
 
 <h1>All expences</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+
 <table class="table">
     <thead>
         <tr>
@@ -26,7 +30,10 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Value)
-            </td>
+                    @{
+                        sum += item.Value;
+                    }
+                </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
@@ -39,3 +46,7 @@
 }
     </tbody>
 </table>
+
+<p>
+    <h2>The total spent is @sum$ </h2>
+</p>
